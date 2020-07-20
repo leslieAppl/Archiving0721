@@ -7,4 +7,5 @@
     stores them in a file for future reference, so every time the app is launched, the 
     values in the model are recovered from the file.
 
+## Archiving the model’s data
 
