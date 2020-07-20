@@ -11,3 +11,5 @@
 
 ## Displaying the model’s data
 
+## Adding and updating the model’s values
+
