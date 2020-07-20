@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Items View Controller-->
         <scene sceneID="QKy-2l-5cI">
             <objects>
-                <tableViewController id="FNt-G4-Ad4" sceneMemberID="viewController">
+                <tableViewController id="FNt-G4-Ad4" customClass="ItemsViewController" customModule="Archiving0721" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tAK-60-ujW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -43,7 +43,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="gPR-9Q-wlg">
-                        <barButtonItem key="leftBarButtonItem" title="Delete Item" id="YeN-BT-yhu"/>
+                        <barButtonItem key="leftBarButtonItem" title="Delete Item" id="YeN-BT-yhu">
+                            <connections>
+                                <action selector="editItems:" destination="FNt-G4-Ad4" id="ETv-dt-Pc5"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Item" id="udK-aL-yc8">
                             <connections>
                                 <segue destination="z9X-80-u6p" kind="show" identifier="addItem" id="2hK-1I-WmZ"/>
@@ -55,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="829" y="173"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Item View Controller-->
         <scene sceneID="5Iv-AU-2es">
             <objects>
-                <viewController id="z9X-80-u6p" sceneMemberID="viewController">
+                <viewController id="z9X-80-u6p" customClass="EditItemViewController" customModule="Archiving0721" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m6H-cR-FDp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,6 +76,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9Z-m4-knd">
                                 <rect key="frame" x="326" y="185.5" width="68" height="30"/>
                                 <state key="normal" title="Save Item"/>
+                                <connections>
+                                    <action selector="saveItemBtn:" destination="z9X-80-u6p" eventType="touchUpInside" id="3eK-ed-FIM"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="75Q-0l-wXQ">
                                 <rect key="frame" x="80" y="141.5" width="314" height="34"/>
@@ -92,6 +99,9 @@
                         <viewLayoutGuide key="safeArea" id="cYj-6T-wWZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="PlF-fL-tOJ"/>
+                    <connections>
+                        <outlet property="nameText" destination="75Q-0l-wXQ" id="0HJ-DH-8g9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GzZ-3R-VVy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,6 +127,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2hK-1I-WmZ"/>
+        <segue reference="D4P-MF-G5E"/>
     </inferredMetricsTieBreakers>
 </document>

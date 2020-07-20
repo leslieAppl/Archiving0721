@@ -15,6 +15,9 @@ struct ApplicationData {
     private var filePath: String!
     
     init() {
+        ///IMPORTANT:
+        ///Notice that we have initialized the file with an empty array (items = []).
+        ///This is not only allowed but also required because the methods provided by the NSKeyedArchiver and NSKeyedUnarchiver classes cannot work with empty data.
         items = []
         
         let documents = manager.urls(for: .documentDirectory, in: .userDomainMask)

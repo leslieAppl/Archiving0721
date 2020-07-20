@@ -9,3 +9,5 @@
 
 ## Archiving the model’s data
 
+## Displaying the model’s data
+
